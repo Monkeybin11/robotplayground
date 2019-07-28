@@ -6,6 +6,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+//Load ref
+
+
 namespace RobotPlayground
 {
     /// <summary>
@@ -13,5 +16,12 @@ namespace RobotPlayground
     /// </summary>
     public partial class App : Application
     {
+        public static ImportMap.ImportMap importmap;
+
+        public App()
+        {
+            importmap = new ImportMap.ImportMap();
+        }
+
     }
 }

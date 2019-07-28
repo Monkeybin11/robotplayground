@@ -24,5 +24,11 @@ namespace RobotPlayground
         {
             InitializeComponent();
         }
+
+        private void LoadMap_Click(object sender, RoutedEventArgs e)
+        {
+            // Load XML data from map
+            App.importmap.LoadMap();
+        }
     }
 }

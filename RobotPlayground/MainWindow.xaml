@@ -5,8 +5,32 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RobotPlayground"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="Robot Playground" Height="350" Width="525">
     <Grid>
-        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Grid.Column="0" Background="Black">
+            <Label  Content="PLAYGROUND MAP" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+        </Grid>
+
+        <Grid Grid.Row="0" Grid.Column="1" Background="Black">
+            <Label  Content="CONTROL" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="1" Background="Black">
+            <Button Name="LoadMap" Margin="1" Content="Load map" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="LoadMap_Click"/>
+        </Grid>
+
     </Grid>
 </Window>
