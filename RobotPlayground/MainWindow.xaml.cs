@@ -30,5 +30,55 @@ namespace RobotPlayground
             // Load XML data from map
             App.importmap.LoadMap();
         }
+
+        private void GeneratePoints_Click(object sender, RoutedEventArgs e)
+        {
+            //var elipseNo1 = new Ellipse(); 
+            //Canvas.SetLeft(elipseNo1,48);
+            //elipseNo1.Width = 10;
+            //elipseNo1.Height = 10;
+            //elipseNo1.Fill = new SolidColorBrush((Color) ColorConverter.ConvertFromString("Red"));
+            //Playground.Children.Add(elipseNo1);
+
+            // Generate Elipse object field
+            Ellipse[] ellipsePoints = new Ellipse[3136];
+
+            // Generate Position points
+            List<Point> points = new List<Point>() { };
+
+            for (int j = 0; j < 56; j++)
+            {
+                for (int k = 0; k < 56; k++)
+                {
+                    points.Add(new Point(j * 12, k * 12));
+                }
+            }
+
+
+            //Add elpse
+            for (int pointNo = 0; pointNo < 3136; pointNo++)
+            {
+                if (pointNo == 3135 || pointNo == 57)
+                {
+                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Blue };
+                }
+                else
+                {
+                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Red };
+                }
+                
+                Playground.Children.Add(ellipsePoints[pointNo]);
+            }
+
+            // Change starting point
+            //List<Point> changeStartPoint = points.OrderByDescending(x => x.X).ThenByDescending(y => y.Y).ToList();
+
+            // Put elipse on canvas
+            for (int _point = 0;  _point < points.Count ; _point++)
+            {
+                Canvas.SetLeft(ellipsePoints[_point], points[_point].X);
+                Canvas.SetTop(ellipsePoints[_point], points[_point].Y);
+            }
+        }
     }
 }

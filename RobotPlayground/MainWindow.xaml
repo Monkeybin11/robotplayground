@@ -5,32 +5,52 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:RobotPlayground"
         mc:Ignorable="d"
-        Title="Robot Playground" Height="350" Width="525">
+        Title="Robot Playground" Height="750" Width="900" ResizeMode="NoResize">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="4*"/>
-            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="675"/>
+            <ColumnDefinition Width="225"/>
         </Grid.ColumnDefinitions>
         <Grid.RowDefinitions>
             <RowDefinition Height="40"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
-            <RowDefinition Height="1*"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="40"/>
+            <RowDefinition Height="515"/>
         </Grid.RowDefinitions>
 
+        <!-- Title map-->
         <Grid Grid.Row="0" Grid.Column="0" Background="Black">
             <Label  Content="PLAYGROUND MAP" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
         </Grid>
-
+        <!-- Title control-->
         <Grid Grid.Row="0" Grid.Column="1" Background="Black">
             <Label  Content="CONTROL" Margin="1" FontWeight="Bold" FontSize="18" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Background="#FFB6B6B6" />
         </Grid>
-
+        <!-- Load robot map-->
         <Grid Grid.Row="1" Grid.Column="1" Background="Black">
             <Button Name="LoadMap" Margin="1" Content="Load map" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="LoadMap_Click"/>
         </Grid>
+        <!-- Generate points-->
+        <Grid Grid.Row="2" Grid.Column="1" Background="Black">
+            <Button Name="GeneratePoints" Margin="1" Content="Genrate Map" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="GeneratePoints_Click" />
+        </Grid>
+        <!-- Map-->
+        <Grid Grid.Row="1" Grid.Column="0" Background="Black" Grid.RowSpan="5">
+
+            <Canvas Name="Playground" Margin="1" Background="White">
+                <Canvas.LayoutTransform>
+                    <ScaleTransform ScaleY="-1" />
+                </Canvas.LayoutTransform>
+                <!--Ellipse Canvas.Left="0" Width="10"  Height="10" Fill="Gray"/>
+                <Ellipse Canvas.Left="12" Width="10"  Height="10" Fill="Gray"/>
+                <Ellipse Canvas.Left="24" Width="10"  Height="10" Fill="Gray"/>
+                <Ellipse Canvas.Left="36" Width="10"  Height="10" Fill="Gray"/>
+                <Ellipse Canvas.Left="672" Width="10"  Height="10" Fill="Gray"/-->
+            </Canvas>
+        </Grid>
+
 
     </Grid>
 </Window>
