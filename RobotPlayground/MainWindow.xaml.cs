@@ -45,6 +45,8 @@ namespace RobotPlayground
 
             // Generate Position points
             List<Point> points = new List<Point>() { };
+            double xDiv = 0;
+            double yDiv = 0;
 
             for (int j = 0; j < 56; j++)
             {
@@ -80,8 +82,14 @@ namespace RobotPlayground
             // Put elipse on canvas
             for (int _point = 0;  _point < points.Count ; _point++)
             {
-                Canvas.SetLeft(ellipsePoints[_point], points[_point].X);
-                Canvas.SetTop(ellipsePoints[_point], points[_point].Y);
+                // Row def
+                Canvas.SetTop(ellipsePoints[_point], points[_point].X);
+                // Col def
+                Canvas.SetLeft(ellipsePoints[_point], points[_point].Y);
+                // Div list by 12 to get coordinates
+                xDiv = (points[_point].X / 12) + 1;
+                yDiv = (points[_point].Y / 12) + 1;
+                ellipsePoints[_point].ToolTip = $"R {xDiv} C {yDiv}";
             }
         }
     }

@@ -34,7 +34,7 @@
         </Grid>
         <!-- Generate points-->
         <Grid Grid.Row="2" Grid.Column="1" Background="Black">
-            <Button Name="GeneratePoints" Margin="1" Content="Genrate Map" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="GeneratePoints_Click" />
+            <Button Name="GeneratePoints" Margin="1" Content="Generate Map" FontWeight="Bold" FontSize="18"  Background="#FFF1EDED" Click="GeneratePoints_Click" />
         </Grid>
         <!-- Map-->
         <Grid Grid.Row="1" Grid.Column="0" Background="Black" Grid.RowSpan="5">
@@ -43,7 +43,7 @@
                 <Canvas.LayoutTransform>
                     <ScaleTransform ScaleY="-1" />
                 </Canvas.LayoutTransform>
-                <!--Ellipse Canvas.Left="0" Width="10"  Height="10" Fill="Gray"/>
+                <!--Ellipse Canvas.Left="0" Width="10"  Height="10" Fill="Gray" ToolTip="R1 C1"/>
                 <Ellipse Canvas.Left="12" Width="10"  Height="10" Fill="Gray"/>
                 <Ellipse Canvas.Left="24" Width="10"  Height="10" Fill="Gray"/>
                 <Ellipse Canvas.Left="36" Width="10"  Height="10" Fill="Gray"/>
