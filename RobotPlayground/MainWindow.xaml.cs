@@ -58,13 +58,17 @@ namespace RobotPlayground
             //Add elpse
             for (int pointNo = 0; pointNo < 3136; pointNo++)
             {
-                if (pointNo == 3135 || pointNo == 57)
+                if (App.importmap.sortedPoints[pointNo].Status == "Critical")
                 {
-                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Blue };
+                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Red };
+                }
+                else if (App.importmap.sortedPoints[pointNo].Status == "Plugged")
+                {
+                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Black };
                 }
                 else
                 {
-                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Red };
+                    ellipsePoints[pointNo] = new Ellipse() { Width = 10, Height = 10, Fill = Brushes.Gray };
                 }
                 
                 Playground.Children.Add(ellipsePoints[pointNo]);
